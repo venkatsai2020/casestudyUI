@@ -1,0 +1,102 @@
+<div class="header">
+<h1 class="mat-display-3">WASH REQUESTS</h1>
+</div>
+
+<div class="table">
+<!--<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="package">
+      <th mat-header-cell *matHeaderCellDef> Package </th>
+      <td mat-cell *matCellDef="let element"> {{element.package}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="car">
+      <th mat-header-cell *matHeaderCellDef> Car </th>
+      <td mat-cell *matCellDef="let element"> {{element.car}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="city">
+      <th mat-header-cell *matHeaderCellDef> City </th>
+      <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+    </ng-container>
+
+     <ng-container matColumnDef="date_time">
+      <th mat-header-cell *matHeaderCellDef> Date & Time </th>
+      <td mat-cell *matCellDef="let element"> {{element.date_time}} </td>
+    </ng-container>
+  
+     <ng-container matColumnDef="username">
+      <th mat-header-cell *matHeaderCellDef> User Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+    </ng-container>
+
+     <ng-container matColumnDef="schedule">
+      <th mat-header-cell *matHeaderCellDef> Scheduled Later </th>
+      <td mat-cell *matCellDef="let element"> {{element.schedule}} </td>
+    </ng-container>
+
+     <ng-container matColumnDef="cost">
+      <th mat-header-cell *matHeaderCellDef> Cost </th>
+      <td mat-cell *matCellDef="let element"> {{element.cost}} </td>
+    </ng-container>
+
+     <ng-container matColumnDef="accept_denied">
+      <th mat-header-cell *matHeaderCellDef> Button </th>
+      <td mat-cell *matCellDef="let element"> <button mat-raised-button >Accept</button></td>
+    </ng-container>
+  
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table> -->
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->      
+    <!-- Name Column -->
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element" >{{element.position}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="package">
+      <th mat-header-cell *matHeaderCellDef> Package </th>
+      <td mat-cell *matCellDef="let element"> {{element.package}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="addons">
+      <th mat-header-cell *matHeaderCellDef> Addons </th>
+      <td mat-cell *matCellDef="let element"> {{element.addons}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef> Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="accept">
+      <th mat-header-cell *matHeaderCellDef> Accept </th>
+      <td mat-cell *matCellDef="let element"><button mat-raised-button (click)='acceptedOrders(this.element)'>Accept</button></td>
+    </ng-container>
+
+    <ng-container matColumnDef="cancle">
+      <th mat-header-cell *matHeaderCellDef> Cancle </th>
+      <td mat-cell *matCellDef="let element"><button mat-raised-button (click)='cancleOrders(this.element)'>cancle</button></td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

@@ -1,0 +1,37 @@
+<div>
+    <form [formGroup]="addonsmanagement" (ngSubmit)="onsubmit()">
+    <mat-dialog-content>
+    <div class="container-fluid">
+        <div class="form-group">
+            <label>1.Service Name</label>
+            <input type="text" class="form-control" formControlName='name' required>
+            <small class="text-danger">{{nameerror}}</small>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>2. Cost(In dollers)</label>
+            <input type="Number" class="form-control" formControlName='cost' required>
+            <small class="text-danger">{{costerror}}</small>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>3. Select Status</label>
+                <select class="form-select" aria-label="Default select example" formControlName='status'>
+                    <option selected disabled>Open this select menu</option>
+                    <option value="active">Active</option>
+                    <option value="inactive">inactive</option>
+                </select>
+                <small class="text-danger">{{statuserror}}</small>
+        </div>
+        </div>
+    </mat-dialog-content>
+        <br>
+        <div>
+            <mat-dialog-actions>
+                <button mat-raised-button  color='warn' mat-dialog-close="false">Cancle</button>
+                <button mat-raised-button type="submit" color="primary">Register</button>
+            </mat-dialog-actions>
+        </div>
+    </form>
+</div>
+

@@ -1,0 +1,132 @@
+<!--<div>
+    <div class="header">
+        <h1 class="mat-display-3">ORDER</h1>
+    </div>
+    <div class="form">
+        <form #orderform="ngForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="select" class="form-label">1. Select a Serviceplan:</label>
+                <select class="form-select" required name="packag"  id="select"  [(ngModel)]="ordermodel.packag">
+                    <option selected disabled value>Choose a package</option>
+                    <option>a</option>
+                    <option>b</option>
+                    <option>c</option>
+                    <option>d</option>
+                </select>
+            </div>
+            <br>
+
+        <div class="form-group">
+            <label for="addOns">2. Select Addon(s)</label> <br>
+            <button type="button" class="btn btn-info" (click)="status()">View addons for</button> <br> <br>
+            <select class="form-select" required name="addOns" *ngIf="statu" id="addOns" [(ngModel)]="ordermodel.addOns">
+                <option value="" selected disabled value>Select addon(s)</option>
+                <option>a</option>
+                    <option>b</option>
+                    <option>c</option>
+                    <option>d</option>
+            </select>
+        </div>
+        <br>
+            <div class="form-group">
+                <label for="dateTime">3. Select Date and Time</label>
+                <input class="form-select" required type="datetime-local" id="dateTime" name="dateTime" [(ngModel)]="ordermodel.dateTime">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="washer">4. Select washer</label>
+                <select class="form-select" required name="washer" id="washer" [(ngModel)]="ordermodel.washer">
+                    <option selected disabled value >Choose a Washer</option>
+                    <option>a</option>
+                    <option>b</option>
+                    <option>c</option>
+                    <option>d</option>
+                </select>
+            </div>
+            <br>
+            <div class="form-check form-check-inline">
+                <label >5. Want to schedule order for later?</label> <br> <br>
+                <input type="radio"  name="scheduledLater"  value="true" [(ngModel)]="ordermodel.scheduledLater" requierd> Yes
+                <input type="radio"  name="scheduledLater"  value="false" [(ngModel)]="ordermodel.scheduledLater" > No
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="instruction">6. Instruction to Washer(if any)</label>
+                <textarea class="form-control" id="instruction" name="instruction" rows="3" [(ngModel)]="ordermodel.instruction" ></textarea>
+            </div>
+            <br>
+            <button  [disabled]="orderform.form.invalid" class="btn btn-primary m-3 float-right">SUBMIT ORDER</button>
+            <div><h2 *ngIf="success">Order Successfull</h2></div>
+        </form>
+    </div>
+</div>-->
+
+<div>
+    <div class="header">
+        <h1 class="mat-display-3">Book Order</h1>
+    </div>
+    <div class="container-fluid">
+        <form [formGroup]='bookorder' (ngSubmit)="onsubmit()" *ngIf="!success">
+            <div class="form-group">
+                <label>Select Servicepakage</label>
+                <select class="form-select" aria-label="Default select example" formControlName='package'>
+                    <option selected disabled value>Open this select menu</option>
+                    <option *ngFor="let package of packagearray" [value]="package._id">{{package.name}}--{{package.cost}}$</option>
+                  </select>
+                  <small class="text-danger"> {{packageerror}}</small>
+            </div>
+            <br>
+            <div class="form-group">
+                <label>Select addons</label>
+                    <select class="form-select" aria-label="Default select example" formControlName='addons'>
+                        <option selected disabled value>Open this select menu</option>
+                        <option *ngFor='let addons of addonarray' [value]="addons._id">{{addons.name}}--{{addons.cost}}$</option>
+                    </select>
+                    <small class="text-danger"> {{addonserror}}</small>
+            </div>
+            <br>
+            <div class="form-group">
+                <label>Select date</label>
+                <input type="date" class="form-select" formControlName='date'>
+                <small class="text-danger"> {{dateerror}}</small>
+            </div>
+            <br>
+            <div class="form-group">
+                <label>Select Washer</label>
+                    <select class="form-select" aria-label="Default select example" formControlName='washer'>
+                        <option selected disabled value>Open this select menu</option>
+                        <option *ngFor='let washer of workerarray' [value]="washer.login_ref_id">{{washer.name}}</option>
+                    </select>
+                    <small class="text-danger"> {{washererror}}</small>
+            </div>
+            <br>
+            <div class="form-group">
+                <label>ScheduledLater</label>
+                <div class="form-check">
+                    <input class="form-check-inline" type="radio" value="true" name="schedule" formControlName='schedule'>
+                         <label class="form-check-label" for="flexCheckDefault">
+                                <p>True</p>
+                         </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-inline" type="radio" value="false"  name="schedule" formControlName='schedule'>
+                        <label class="form-check-label" for="flexCheckChecked">
+                            <p>False</p>
+                        </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Instruction to Washer</label>
+                <textarea class="form-select" formControlName='instruction'></textarea> 
+            </div>
+            <br>
+            <div>
+                <button mat-raised-button color="primary" type="submit">Book Order</button>
+            </div>
+        </form>
+     </div>
+     <div *ngIf="success" class="footer">
+        <h1 class="mat-display-3">Order Success</h1>
+    </div>
+</div>
+

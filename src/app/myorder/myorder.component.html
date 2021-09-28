@@ -1,0 +1,279 @@
+<div>
+<div class="header">
+  <h1 class="mat-display-3">MY ORDERS</h1>
+  </div>
+<div>
+    <mat-tab-group mat-stretch-tabs dynamicHeight backgroundColor='primary'>
+        <mat-tab label="ACCEPTED"> 
+            <div class="accepted">
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+
+                    <!--- Note that these columns can be defined in any order.
+                          The actual rendered columns are set as a property on the row definition" -->      
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="position">
+                      <th mat-header-cell *matHeaderCellDef> No. </th>
+                      <td mat-cell *matCellDef="let element" >{{element.position}}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="custname">
+                      <th mat-header-cell *matHeaderCellDef>Customer</th>
+                      <td mat-cell *matCellDef="let element" >{{element.custname}}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="custaddress">
+                      <th mat-header-cell *matHeaderCellDef>Address</th>
+                      <td mat-cell *matCellDef="let element" >{{element.custaddress}}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="custcarname">
+                      <th mat-header-cell *matHeaderCellDef>Car</th>
+                      <td mat-cell *matCellDef="let element" >{{element.custcarname}}</td>
+                    </ng-container>
+                    
+                    <ng-container matColumnDef="custmobile">
+                      <th mat-header-cell *matHeaderCellDef>Mobile</th>
+                      <td mat-cell *matCellDef="let element" >{{element.custmobile}}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="instruction">
+                      <th mat-header-cell *matHeaderCellDef>Instruction</th>
+                      <td mat-cell *matCellDef="let element" >{{element.instruction}}</td>
+                    </ng-container>
+                
+                    <ng-container matColumnDef="status">
+                      <th mat-header-cell *matHeaderCellDef> Status </th>
+                      <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+                    </ng-container>
+                  
+                    <!-- Weight Column -->
+                    <ng-container matColumnDef="package">
+                      <th mat-header-cell *matHeaderCellDef> Package </th>
+                      <td mat-cell *matCellDef="let element"> {{element.package}} </td>
+                    </ng-container>
+                
+                    <ng-container matColumnDef="addons">
+                      <th mat-header-cell *matHeaderCellDef> Addons </th>
+                      <td mat-cell *matCellDef="let element"> {{element.addons}} </td>
+                    </ng-container>
+                
+                    <ng-container matColumnDef="date">
+                      <th mat-header-cell *matHeaderCellDef> Date </th>
+                      <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+                    </ng-container>
+                
+                
+                    <ng-container matColumnDef="button">
+                      <th mat-header-cell *matHeaderCellDef> Button </th>
+                      <td mat-cell *matCellDef="let element"><button mat-raised-button (click)='Toprocess(this.element)' >Process</button></td>
+                    </ng-container>
+                  
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                  </table>
+            </div>
+        </mat-tab>
+        <mat-tab label="IN-PROCESS" > 
+            <div class="inprocess">
+                <table mat-table [dataSource]="dataSource_1" class="mat-elevation-z8 demo-table">
+
+                    <!--- Note that these columns can be defined in any order.
+                          The actual rendered columns are set as a property on the row definition" -->      
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="position">
+                      <th mat-header-cell *matHeaderCellDef> No. </th>
+                      <td mat-cell *matCellDef="let element" >{{element.position}}</td>
+                    </ng-container>
+                
+                    <ng-container matColumnDef="status">
+                      <th mat-header-cell *matHeaderCellDef> Status </th>
+                      <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="custname">
+                      <th mat-header-cell *matHeaderCellDef>Customer</th>
+                      <td mat-cell *matCellDef="let element" >{{element.custname}}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="custaddress">
+                      <th mat-header-cell *matHeaderCellDef>Address</th>
+                      <td mat-cell *matCellDef="let element" >{{element.custaddress}}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="custcarname">
+                      <th mat-header-cell *matHeaderCellDef>Car</th>
+                      <td mat-cell *matCellDef="let element" >{{element.custcarname}}</td>
+                    </ng-container>
+                    
+                    <ng-container matColumnDef="custmobile">
+                      <th mat-header-cell *matHeaderCellDef>Mobile</th>
+                      <td mat-cell *matCellDef="let element" >{{element.custmobile}}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="instruction">
+                      <th mat-header-cell *matHeaderCellDef>Instruction</th>
+                      <td mat-cell *matCellDef="let element" >{{element.instruction}}</td>
+                    </ng-container>
+                  
+                    <!-- Weight Column -->
+                    <ng-container matColumnDef="package">
+                      <th mat-header-cell *matHeaderCellDef> Package </th>
+                      <td mat-cell *matCellDef="let element"> {{element.package}} </td>
+                    </ng-container>
+                
+                    <ng-container matColumnDef="addons">
+                      <th mat-header-cell *matHeaderCellDef> Addons </th>
+                      <td mat-cell *matCellDef="let element"> {{element.addons}} </td>
+                    </ng-container>
+                
+                    <ng-container matColumnDef="date">
+                      <th mat-header-cell *matHeaderCellDef> Date </th>
+                      <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+                    </ng-container>
+                
+                
+                    <ng-container matColumnDef="button">
+                      <th mat-header-cell *matHeaderCellDef> Button </th>
+                      <td mat-cell *matCellDef="let element"><button mat-raised-button (click)='Tocompleted(this.element)' >Completed</button></td>
+                    </ng-container>
+                  
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                  </table>
+            </div>
+        </mat-tab>
+        <mat-tab label="COMPLETED"> 
+            <div class="completed">
+                <table mat-table [dataSource]="dataSource_2" class="mat-elevation-z8 demo-table">
+
+                    <!--- Note that these columns can be defined in any order.
+                          The actual rendered columns are set as a property on the row definition" -->      
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="position">
+                      <th mat-header-cell *matHeaderCellDef> No. </th>
+                      <td mat-cell *matCellDef="let element" >{{element.position}}</td>
+                    </ng-container>
+                
+                    <ng-container matColumnDef="status">
+                      <th mat-header-cell *matHeaderCellDef> Status </th>
+                      <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="custname">
+                      <th mat-header-cell *matHeaderCellDef>Customer</th>
+                      <td mat-cell *matCellDef="let element" >{{element.custname}}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="custaddress">
+                      <th mat-header-cell *matHeaderCellDef>Address</th>
+                      <td mat-cell *matCellDef="let element" >{{element.custaddress}}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="custcarname">
+                      <th mat-header-cell *matHeaderCellDef>Car</th>
+                      <td mat-cell *matCellDef="let element" >{{element.custcarname}}</td>
+                    </ng-container>
+                    
+                    <ng-container matColumnDef="custmobile">
+                      <th mat-header-cell *matHeaderCellDef>Mobile</th>
+                      <td mat-cell *matCellDef="let element" >{{element.custmobile}}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="instruction">
+                      <th mat-header-cell *matHeaderCellDef>Instruction</th>
+                      <td mat-cell *matCellDef="let element" >{{element.instruction}}</td>
+                    </ng-container>
+                  
+                    <!-- Weight Column -->
+                    <ng-container matColumnDef="package">
+                      <th mat-header-cell *matHeaderCellDef> Package </th>
+                      <td mat-cell *matCellDef="let element"> {{element.package}} </td>
+                    </ng-container>
+                
+                    <ng-container matColumnDef="addons">
+                      <th mat-header-cell *matHeaderCellDef> Addons </th>
+                      <td mat-cell *matCellDef="let element"> {{element.addons}} </td>
+                    </ng-container>
+                
+                    <ng-container matColumnDef="date">
+                      <th mat-header-cell *matHeaderCellDef> Date </th>
+                      <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+                    </ng-container>
+                
+                  
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns_1"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns_1;"></tr>
+                  </table>
+            </div> </mat-tab>
+        <mat-tab label="CANCELLED"> 
+            <div class="cancled">
+                <table mat-table [dataSource]="dataSource_3" class="mat-elevation-z8 demo-table">
+
+                    <!--- Note that these columns can be defined in any order.
+                          The actual rendered columns are set as a property on the row definition" -->      
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="position">
+                      <th mat-header-cell *matHeaderCellDef> No. </th>
+                      <td mat-cell *matCellDef="let element" >{{element.position}}</td>
+                    </ng-container>
+                
+                    <ng-container matColumnDef="status">
+                      <th mat-header-cell *matHeaderCellDef> Status </th>
+                      <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+                    </ng-container>
+                  
+                    <!-- Weight Column -->
+                    <ng-container matColumnDef="package">
+                      <th mat-header-cell *matHeaderCellDef> Package </th>
+                      <td mat-cell *matCellDef="let element"> {{element.package}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="custname">
+                      <th mat-header-cell *matHeaderCellDef>Customer</th>
+                      <td mat-cell *matCellDef="let element" >{{element.custname}}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="custaddress">
+                      <th mat-header-cell *matHeaderCellDef>Address</th>
+                      <td mat-cell *matCellDef="let element" >{{element.custaddress}}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="custcarname">
+                      <th mat-header-cell *matHeaderCellDef>Car</th>
+                      <td mat-cell *matCellDef="let element" >{{element.custcarname}}</td>
+                    </ng-container>
+                    
+                    <ng-container matColumnDef="custmobile">
+                      <th mat-header-cell *matHeaderCellDef>Mobile</th>
+                      <td mat-cell *matCellDef="let element" >{{element.custmobile}}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="instruction">
+                      <th mat-header-cell *matHeaderCellDef>Instruction</th>
+                      <td mat-cell *matCellDef="let element" >{{element.instruction}}</td>
+                    </ng-container>
+                
+                    <ng-container matColumnDef="addons">
+                      <th mat-header-cell *matHeaderCellDef> Addons </th>
+                      <td mat-cell *matCellDef="let element"> {{element.addons}} </td>
+                    </ng-container>
+                
+                    <ng-container matColumnDef="date">
+                      <th mat-header-cell *matHeaderCellDef> Date </th>
+                      <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+                    </ng-container>
+                
+                
+                    <ng-container matColumnDef="button">
+                      <th mat-header-cell *matHeaderCellDef> Restore </th>
+                      <td mat-cell *matCellDef="let element"><button mat-raised-button (click)='Torestore(this.element)'>Restore</button></td>
+                    </ng-container>
+                  
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                  </table>
+            </div>
+        </mat-tab>
+      </mat-tab-group>
+</div>
+</div>

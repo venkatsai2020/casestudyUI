@@ -1,0 +1,102 @@
+<mat-tab-group mat-stretch-tabs dynamicHeight>
+    <mat-tab label="Admin">
+<body>
+    <div id="login">
+        <h3 class="text-center text-white pt-5 mat-display-3" >Admin Login form</h3>
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                        <form id="login-form" class="form" [formGroup]="adminloginForm" (ngSubmit)="adminlogin()">
+                            <h3 class="text-center text-info">Login</h3>
+                            <div class="form-group">
+                                <label for="email" class="text-info">Email:</label><br>
+                                <input type="text" formControlName="email" name="email" id="email" class="form-control">
+                                <small class="text-danger"> {{emailErroradmin}}</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="text-info">Password:</label><br>
+                                <input type="password" formControlName="password" name="password" id="password" class="form-control">
+                                <small class="text-danger"> {{passwordErroradmin}}</small>
+                            </div>
+                            <div class="form-group">
+                                <br>
+                                <button type="submit" type="submit" class="btn btn-primary">Submit</button>
+                              </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</mat-tab>
+<mat-tab label="Customer">
+    <body>
+        <div id="login">
+            <h3 class="text-center text-white pt-5 mat-display-3" >Customer Login form</h3>
+            <div class="container">
+                <div id="login-row" class="row justify-content-center align-items-center">
+                    <div id="login-column" class="col-md-6">
+                        <div id="login-box" class="col-md-12">
+                            <form [formGroup]="customerloginForm" id="login-form" (ngSubmit)="customerlogin()">
+                                <h3 class="text-center text-info">Login</h3>
+                                <div class="form-group">
+                                    <label for="email" class="text-info">Email:</label><br>
+                                    <input type="text"  formControlName="email" id="email" name="email" class="form-control">
+                                    <small class="text-danger"> {{emailError}}</small>
+                                  </div>
+                                <div class="form-group">
+                                    <label for="password" class="text-info">Password:</label><br>
+                                    <input type="password"  formControlName="password" name="password" id="password" class="form-control">
+                                    <small class="text-danger"> {{passwordError}}</small>
+                                </div>
+                                <div class="form-group">
+                                    <br>
+                                    <button type="submit" type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                                <br>
+                                <div id="register-link" class="text-right">
+                                    <a href="signup" class="text-info">Register here</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</mat-tab>
+<mat-tab label="Washer">
+    <body>
+        <div id="login">
+            <h3 class="text-center text-white pt-5 mat-display-3" >Washer Login form</h3>
+            <div class="container">
+                <div id="login-row" class="row justify-content-center align-items-center">
+                    <div id="login-column" class="col-md-6">
+                        <div id="login-box" class="col-md-12">
+                            <form id="login-form" class="form" [formGroup]="washerloginForm" (ngSubmit)="washerlogin()">
+                                <h3 class="text-center text-info">Login</h3>
+                                <div class="form-group">
+                                    <label for="email" class="text-info">Email:</label><br>
+                                    <input type="text" formControlName="email" name="email" id="email" class="form-control">
+                                    <small class="text-danger"> {{emailErrorworker}}</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="text-info">Password:</label><br>
+                                    <input type="password" formControlName="password" name="password" id="password" class="form-control">
+                                    <small class="text-danger"> {{passwordErrorworker}}</small>
+                                </div>
+                                <div class="form-group">
+                                    <br>
+                                    <button type="submit" type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</mat-tab>
+</mat-tab-group>

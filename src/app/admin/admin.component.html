@@ -1,0 +1,15 @@
+<mat-drawer-container>
+    <mat-drawer mode='side' [(opened)]="opened"><h1>MENU</h1>
+        <a routerLink='adminhome' routerLinkActive="active" >Home</a>
+        <a routerLink='createwasher' routerLinkActive="active">Create Washer</a>
+        <a routerLink='carmanagement' routerLinkActive="active" >Car Management</a>
+        <a routerLink='addonsmanagment' routerLinkActive="active" >Addons Management</a>
+        <a routerLink='plansmanagement' routerLinkActive="active" >Plans Management</a>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div class="button">
+            <button mat-raised-button color="primary" (click)="opened=!opened"><mat-icon>view_headline</mat-icon></button>
+        </div>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>

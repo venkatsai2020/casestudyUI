@@ -1,0 +1,364 @@
+<div>
+    <div class="header">
+      <h1 class="mat-display-3">ORDERS</h1>
+      </div>
+    <div>
+<div>
+<mat-tab-group mat-stretch-tabs dynamicHeight backgroundColor='primary' animationDuration="0ms">
+    <mat-tab label="Orders">
+        <div class="orders">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+          
+            <!-- Position Column -->
+            <ng-container matColumnDef="position">
+              <th mat-header-cell *matHeaderCellDef> No. </th>
+              <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="custcarname">
+              <th mat-header-cell *matHeaderCellDef>Car</th>
+              <td mat-cell *matCellDef="let element"> {{element.custcarname}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="cost">
+              <th mat-header-cell *matHeaderCellDef>Cost</th>
+              <td mat-cell *matCellDef="let element"> {{element.cost}}₹ </td>
+            </ng-container>
+
+
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="status">
+              <th mat-header-cell *matHeaderCellDef> Status </th>
+              <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+            </ng-container>
+          
+            <!-- Weight Column -->
+            <ng-container matColumnDef="package">
+              <th mat-header-cell *matHeaderCellDef> Package </th>
+              <td mat-cell *matCellDef="let element"> {{element.package}} </td>
+            </ng-container>
+          
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="addons">
+              <th mat-header-cell *matHeaderCellDef> Addons </th>
+              <td mat-cell *matCellDef="let element"> {{element.addons}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="date">
+                <th mat-header-cell *matHeaderCellDef> Date </th>
+                <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="washer">
+                <th mat-header-cell *matHeaderCellDef> Washer </th>
+                <td mat-cell *matCellDef="let element"> {{element.washer}} </td>
+              </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          </div>
+     </mat-tab>
+    <mat-tab label="Accepted">
+        <div class="orders">
+        <table mat-table [dataSource]="dataSource_1" class="mat-elevation-z8">
+
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+          
+            <!-- Position Column -->
+            <ng-container matColumnDef="position">
+              <th mat-header-cell *matHeaderCellDef> No. </th>
+              <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="custcarname">
+              <th mat-header-cell *matHeaderCellDef>Car</th>
+              <td mat-cell *matCellDef="let element"> {{element.custcarname}} </td>
+            </ng-container>
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="status">
+              <th mat-header-cell *matHeaderCellDef> Status </th>
+              <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="cost">
+              <th mat-header-cell *matHeaderCellDef>Cost</th>
+              <td mat-cell *matCellDef="let element"> {{element.cost}}₹ </td>
+            </ng-container>
+          
+            <!-- Weight Column -->
+            <ng-container matColumnDef="package">
+              <th mat-header-cell *matHeaderCellDef> Package </th>
+              <td mat-cell *matCellDef="let element"> {{element.package}} </td>
+            </ng-container>
+          
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="addons">
+              <th mat-header-cell *matHeaderCellDef> Addons </th>
+              <td mat-cell *matCellDef="let element"> {{element.addons}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="date">
+                <th mat-header-cell *matHeaderCellDef> Date </th>
+                <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="washer">
+                <th mat-header-cell *matHeaderCellDef> Washer </th>
+                <td mat-cell *matCellDef="let element"> {{element.washer}} </td>
+              </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          </div>
+    </mat-tab>
+    <mat-tab label="In-Process">
+        <div class="orders">
+        <table mat-table [dataSource]="dataSource_2" class="mat-elevation-z8">
+
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+          
+            <!-- Position Column -->
+            <ng-container matColumnDef="position">
+              <th mat-header-cell *matHeaderCellDef> No. </th>
+              <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+            </ng-container>
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="status">
+              <th mat-header-cell *matHeaderCellDef> Status </th>
+              <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="cost">
+              <th mat-header-cell *matHeaderCellDef>Cost</th>
+              <td mat-cell *matCellDef="let element"> {{element.cost}}₹ </td>
+            </ng-container>
+
+            <ng-container matColumnDef="custcarname">
+              <th mat-header-cell *matHeaderCellDef>Car</th>
+              <td mat-cell *matCellDef="let element"> {{element.custcarname}} </td>
+            </ng-container>
+          
+            <!-- Weight Column -->
+            <ng-container matColumnDef="package">
+              <th mat-header-cell *matHeaderCellDef> Package </th>
+              <td mat-cell *matCellDef="let element"> {{element.package}} </td>
+            </ng-container>
+          
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="addons">
+              <th mat-header-cell *matHeaderCellDef> Addons </th>
+              <td mat-cell *matCellDef="let element"> {{element.addons}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="date">
+                <th mat-header-cell *matHeaderCellDef> Date </th>
+                <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="washer">
+                <th mat-header-cell *matHeaderCellDef> Washer </th>
+                <td mat-cell *matCellDef="let element"> {{element.washer}} </td>
+              </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          </div>
+    </mat-tab>
+    <mat-tab label="Cancelled">
+        <div class="orders">
+        <table mat-table [dataSource]="dataSource_3" class="mat-elevation-z8">
+
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+          
+            <!-- Position Column -->
+            <ng-container matColumnDef="position">
+              <th mat-header-cell *matHeaderCellDef> No. </th>
+              <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+            </ng-container>
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="status">
+              <th mat-header-cell *matHeaderCellDef> Status </th>
+              <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="cost">
+              <th mat-header-cell *matHeaderCellDef>Cost</th>
+              <td mat-cell *matCellDef="let element"> {{element.cost}}₹ </td>
+            </ng-container>
+
+            <ng-container matColumnDef="custcarname">
+              <th mat-header-cell *matHeaderCellDef>Car</th>
+              <td mat-cell *matCellDef="let element"> {{element.custcarname}} </td>
+            </ng-container>
+          
+            <!-- Weight Column -->
+            <ng-container matColumnDef="package">
+              <th mat-header-cell *matHeaderCellDef> Package </th>
+              <td mat-cell *matCellDef="let element"> {{element.package}} </td>
+            </ng-container>
+          
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="addons">
+              <th mat-header-cell *matHeaderCellDef> Addons </th>
+              <td mat-cell *matCellDef="let element"> {{element.addons}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="date">
+                <th mat-header-cell *matHeaderCellDef> Date </th>
+                <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="washer">
+                <th mat-header-cell *matHeaderCellDef> Washer </th>
+                <td mat-cell *matCellDef="let element"> {{element.washer}} </td>
+              </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          </div>
+    </mat-tab>
+    <mat-tab label="Completed">
+        <div class="orders">
+          <mat-tab-group mat-stretch-tabs dynamicHeight backgroundColor='primary' animationDuration="0ms">
+            <mat-tab label="Paid Orders"> 
+              <div>
+              <table mat-table [dataSource]="dataSource_5" class="mat-elevation-z8">
+
+                <!--- Note that these columns can be defined in any order.
+                      The actual rendered columns are set as a property on the row definition" -->
+              
+                <!-- Position Column -->
+                <ng-container matColumnDef="position">
+                  <th mat-header-cell *matHeaderCellDef> No. </th>
+                  <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                </ng-container>
+              
+                <!-- Name Column -->
+                <ng-container matColumnDef="status">
+                  <th mat-header-cell *matHeaderCellDef> Status </th>
+                  <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="cost">
+                  <th mat-header-cell *matHeaderCellDef>Cost</th>
+                  <td mat-cell *matCellDef="let element"> {{element.cost}}$ </td>
+                </ng-container>
+
+                <ng-container matColumnDef="custcarname">
+                  <th mat-header-cell *matHeaderCellDef>Car</th>
+                  <td mat-cell *matCellDef="let element"> {{element.custcarname}} </td>
+                </ng-container>
+              
+                <!-- Weight Column -->
+                <ng-container matColumnDef="package">
+                  <th mat-header-cell *matHeaderCellDef> Package </th>
+                  <td mat-cell *matCellDef="let element"> {{element.package}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="paymentStatus">
+                  <th mat-header-cell *matHeaderCellDef>Pay-Status</th>
+                  <td mat-cell *matCellDef="let element"> {{element.paymentstatus}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="paymentid">
+                  <th mat-header-cell *matHeaderCellDef>Payment-Id</th>
+                  <td mat-cell *matCellDef="let element"> {{element.paymentid}} </td>
+                </ng-container>
+              
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="addons">
+                  <th mat-header-cell *matHeaderCellDef> Addons </th>
+                  <td mat-cell *matCellDef="let element"> {{element.addons}} </td>
+                </ng-container>
+    
+                <ng-container matColumnDef="date">
+                    <th mat-header-cell *matHeaderCellDef> Date </th>
+                    <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+                  </ng-container>
+    
+                  <ng-container matColumnDef="washer">
+                    <th mat-header-cell *matHeaderCellDef> Washer </th>
+                    <td mat-cell *matCellDef="let element"> {{element.washer}} </td>
+                  </ng-container>
+              
+                <tr mat-header-row *matHeaderRowDef="displayedColumns_5"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns_5;"></tr>
+              </table>
+              </div>
+            </mat-tab>
+            <mat-tab label="UnPaid Orders">
+              <div>
+                <table mat-table [dataSource]="dataSource_4" class="mat-elevation-z8">
+          
+            
+                  <ng-container matColumnDef="position">
+                    <th mat-header-cell *matHeaderCellDef> No. </th>
+                    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                  </ng-container>
+                
+                  
+                  <ng-container matColumnDef="status">
+                    <th mat-header-cell *matHeaderCellDef> Status </th>
+                    <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+                  </ng-container>
+                
+                  <ng-container matColumnDef="package">
+                    <th mat-header-cell *matHeaderCellDef> Package </th>
+                    <td mat-cell *matCellDef="let element"> {{element.package}} </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="cost">
+                    <th mat-header-cell *matHeaderCellDef>Cost</th>
+                    <td mat-cell *matCellDef="let element"> {{element.cost}}$ </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="custcarname">
+                    <th mat-header-cell *matHeaderCellDef>Car</th>
+                    <td mat-cell *matCellDef="let element"> {{element.custcarname}} </td>
+                  </ng-container>
+                
+                  <ng-container matColumnDef="addons">
+                    <th mat-header-cell *matHeaderCellDef> Addons </th>
+                    <td mat-cell *matCellDef="let element"> {{element.addons}} </td>
+                  </ng-container>
+      
+                  <ng-container matColumnDef="date">
+                      <th mat-header-cell *matHeaderCellDef> Date </th>
+                      <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+                    </ng-container>
+      
+                    <ng-container matColumnDef="washer">
+                      <th mat-header-cell *matHeaderCellDef> Washer </th>
+                      <td mat-cell *matCellDef="let element"> {{element.washer}} </td>
+                    </ng-container>
+      
+                    
+                    <ng-container matColumnDef="button">
+                      <th mat-header-cell *matHeaderCellDef></th>
+                      <td mat-cell *matCellDef="let element"><button mat-raised-button color="primary" (click)="pay(this.element)">Pay</button></td>
+                    </ng-container>
+                
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns_1"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns_1;"></tr>
+                </table>
+              </div>
+            </mat-tab>
+          </mat-tab-group>
+          </div>
+    </mat-tab>
+</mat-tab-group>
+</div>

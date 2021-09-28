@@ -1,0 +1,55 @@
+<div>
+  <div class="header">
+    <h1 class="mat-display-3">CAR'S MANAGEMENT</h1>
+    </div>
+  <div>
+<div>
+
+
+<div class="button">
+<button mat-raised-button color="accent" (click)="create()"><mat-icon>add</mat-icon></button>
+<br>
+<br>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="carname">
+          <th mat-header-cell *matHeaderCellDef>  Car Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.carname}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="carmodel">
+          <th mat-header-cell *matHeaderCellDef> Car Model </th>
+          <td mat-cell *matCellDef="let element"> {{element.carmodel}} </td>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef> Status </th>
+          <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element"><button mat-mini-fab color="primary" (click)="delete(this.element)"><mat-icon mat-button>delete</mat-icon></button></td>
+          </ng-container>
+
+          <ng-container matColumnDef="update">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element"><button mat-mini-fab color="primary" (click)="update(this.element)"><mat-icon mat-button>update</mat-icon></button></td>
+          </ng-container>
+        
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>      
+</div>

@@ -1,0 +1,36 @@
+.container-fluid{
+    width: 60%;
+    border: 1px solid black;
+    border-radius: 30px;
+    margin: 5% auto;
+}
+
+form{
+    padding: 30px;
+}
+label{
+    font-size: 20px;
+    color: #007bff;
+    padding-bottom: 5px;
+}
+p{
+    color: black;
+    font-size: 15px;
+}
+.header{
+    text-align: center;
+ }
+ .header h1{
+    margin: 0px;
+    margin-top: 1%;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+ }
+ .footer{
+    text-align: center;
+ }
+ .footer h1{
+    margin: 0px;
+    margin-top: 1%;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: green;
+     }

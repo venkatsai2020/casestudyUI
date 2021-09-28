@@ -1,0 +1,44 @@
+mat-drawer-container{
+    height: 100%;
+    position: relative;
+}
+mat-drawer{
+    border: 1px solid gray;
+}
+mat-drawer{
+    background-color: aqua;
+    width: 15%;
+}
+mat-drawer-content{
+    background-color: rgb(202, 202, 202);
+}
+.button{
+    background-color:aqua;
+    padding: 15px;
+    border: 1px solid gray;
+}
+mat-drawer h1{
+    padding: 16.5px;
+    font-weight: bold;
+    background-color: rgb(202, 209, 207);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0px;
+}
+mat-drawer a{
+    text-decoration: none;
+    display: block;
+    padding: 16px;
+    width: auto;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.active{
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+a:hover{
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}

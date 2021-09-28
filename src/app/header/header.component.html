@@ -1,0 +1,22 @@
+<div>
+    <mat-toolbar color="primary" class="navbar">
+    <div>
+        <span>Car Wash</span>
+    </div>
+    <div>
+    <span><a *ngIf='!adminservice.loggedIn()  && !washerrservice.loggedIn() && !custservice.loggedIn()' routerLink="home" routerLinkActive="active">Home</a></span>
+    <!--<span><a *ngIf='!adminservice.loggedIn()  && !washerrservice.loggedIn() && !custservice.loggedIn()' routerLink="aboutus" routerLinkActive="active">AboutUs</a></span>
+    <span><a *ngIf='!adminservice.loggedIn()  && !washerrservice.loggedIn() && !custservice.loggedIn()' routerLink="contactus" routerLinkActive="active">Contact</a></span>-->
+    <span><a *ngIf='!adminservice.loggedIn()  && !washerrservice.loggedIn() && !custservice.loggedIn()' routerLink="login" routerLinkActive="active">Login</a></span>
+    <span><a *ngIf='!adminservice.loggedIn()  && !washerrservice.loggedIn() && !custservice.loggedIn()' routerLink="signup" routerLinkActive="active">SignUp</a></span>
+    <!--<span><a routerLink="worker" routerLinkActive="active">Worker</a></span>
+    <span><a routerLink="admin" routerLinkActive="active">Admin</a></span>
+    <span><a routerLink="customer" routerLinkActive="active">Customer</a></span>-->
+
+    <span><a *ngIf='adminservice.loggedIn()'   (click)='adminservice.logout()' routerLink='' routerLinkActive="active">LogOut</a></span>
+    <span><a *ngIf='washerrservice.loggedIn()' (click)='washerrservice.logout()' routerLink='' routerLinkActive="active">LogOut</a></span>
+    <span><a *ngIf='custservice.loggedIn()' (click)='custservice.logout()' routerLink='' routerLinkActive="active">LogOut</a></span>
+    
+    </div>
+    </mat-toolbar>
+</div>
